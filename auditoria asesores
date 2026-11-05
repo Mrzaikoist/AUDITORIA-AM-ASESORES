@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría de Asesores 2026 (Blindado) - AM Bienes Raíces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body { background-color: white; margin: 0; padding: 0; font-size: 11px; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+            .page-break-inside-avoid { page-break-inside: avoid; }
+            .print-border { border: 1px solid #e5e7eb; }
+            input[type="text"], input[type="date"], input[type="tel"], input[type="email"], select, textarea { border: none; border-bottom: 1px dotted #9ca3af; border-radius: 0; box-shadow: none; background: transparent; padding: 2px; height: auto; font-size: 11px; -webkit-appearance: none; appearance: none; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+            th, td { border: 1px solid #d1d5db; padding: 4px; }
+            .force-bg { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            #signature-canvas { border: 1px solid #9ca3af !important; background: white; }
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .form-input { width: 100%; border-radius: 0.375rem; border: 1px solid #d1d5db; padding: 0.25rem 0.5rem; }
+        .form-select { width: 100%; border-radius: 0.375rem; border: 1px solid #d1d5db; padding: 0.25rem 0.5rem; background-color: white; }
+        #signature-canvas { touch-action: none; background-color: #fafafa; border: 2px dashed #cbd5e1; cursor: crosshair; }
+    </style>
+</head>
+<body class="p-4 md:p-8 text-gray-800">
+    <div class="max-w-7xl mx-auto bg-white p-6 md:p-10 shadow-lg rounded-lg print-border" id="main-container">
+        
+        <!-- BARRA DE ACCESOS DIRECTOS SUPERIOR -->
+        <div class="mb-6 flex flex-wrap justify-end gap-3 no-print sticky top-4 z-20">
+            <button onclick="enviarWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded flex items-center shadow transition-all">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Enviar por WhatsApp
+            </button>
+            <button onclick="enviarCorreo()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded flex items-center shadow transition-all">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Enviar por Correo
+            </button>
+            <button onclick="window.print()" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded flex items-center shadow transition-all">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                Imprimir / PDF
+            </button>
+        </div>
+
+        <div class="text-center mb-6 border-b-4 border-indigo-700 pb-6">
+            <h1 class="text-4xl font-extrabold mb-2 text-indigo-900 tracking-tight force-bg">AM AUDITORÍA 2026</h1>
+            <h2 class="text-2xl font-bold text-gray-700">DASHBOARD DE EVALUACIÓN Y CONTROL DE ASESORES</h2>
+            <p class="text-sm mt-2 text-gray-500 font-medium">AM Bienes Raíces / Valuamex® — Arrendamientos, Operaciones Compartidas, Cultura y Blindaje de Comisión</p>
+        </div>
+
+        <!-- TARJETA DE DATOS DEL ASESOR EVALUADO -->
+        <div class="mb-8 p-6 bg-indigo-50 border border-indigo-200 rounded-lg shadow-sm page-break-inside-avoid force-bg">
+            <h3 class="text-lg font-bold text-indigo-900 mb-4 border-b border-indigo-200 pb-2">DATOS GENERALES DEL ASESOR EVALUADO</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-indigo-900 mb-1">Nombre Completo del Asesor:</label>
+                    <input type="text" id="eval-nombre" class="form-input bg-white" placeholder="Ej. Juan Pérez">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-indigo-900 mb-1">Número de Teléfono (WhatsApp):</label>
+                    <input type="tel" id="eval-telefono" class="form-input bg-white" placeholder="Ej. 55 1234 5678">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-indigo-900 mb-1">Correo Electrónico:</label>
+                    <input type="email" id="eval-correo" class="form-input bg-white" placeholder="asesor@ambienesraices.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-indigo-900 mb-1">Fecha de Evaluación:</label>
+                    <input type="date" id="eval-fecha" class="form-input bg-white">
+                </div>
+            </div>
+        </div>
+
+        <!-- SCORE GLOBAL DASHBOARD -->
+        <div class="mb-8 p-6 bg-slate-800 text-white rounded-lg shadow-md page-break-inside-avoid force-bg">
+            <h3 class="text-xl font-bold text-center mb-4 border-b border-slate-600 pb-2">RENDIMIENTO GLOBAL DEL ASESOR</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <p class="text-sm text-slate-300 font-semibold uppercase">Puntos Auditados</p>
+                    <input type="text" id="global-audited" class="mt-2 w-full bg-slate-700 text-white font-bold text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
+                </div>
+                <div>
+                    <p class="text-sm text-slate-300 font-semibold uppercase">Puntos Logrados</p>
+                    <input type="text" id="global-points" class="mt-2 w-full bg-slate-700 text-white font-bold text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
+                </div>
+                <div>
+                    <p class="text-sm text-slate-300 font-semibold uppercase">Fallas Críticas</p>
+                    <input type="text" id="global-critical" class="mt-2 w-full bg-red-900 text-white font-bold text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
+                </div>
+                <div>
+                    <p class="text-sm text-slate-300 font-semibold uppercase">SCORE TOTAL (%)</p>
+                    <input type="text" id="global-pct" class="mt-2 w-full bg-slate-700 text-white font-bold text-3xl text-center rounded py-2 border-none force-bg" readonly placeholder="0.0%">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8 p-4 bg-gray-50 border border-gray-200 rounded text-sm page-break-inside-avoid">
+            <h4 class="font-bold mb-2">Instrucciones de Llenado:</h4>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>
+                    <strong>Criterio de Evaluación:</strong>
+                    <ul class="list-none pl-4 mt-1 space-y-1">
+                        <li><span class="font-bold bg-green-100 text-green-800 px-1 rounded">(C) Cumple:</span> Ejecución completa y satisfactoria del requisito [1 pt].</li>
+                        <li><span class="font-bold bg-yellow-100 text-yellow-800 px-1 rounded">(CP) Cumple Parcialmente:</span> Ejecución incompleta o a destiempo [0.5 pts].</li>
+                        <li><span class="font-bold bg-red-100 text-red-800 px-1 rounded">(NC) No Cumple:</span> Omisión total o error grave [0 pts].</li>
+                        <li><span class="font-bold bg-gray-200 text-gray-800 px-1 rounded">(NA) No Aplica:</span> Se excluye del cálculo total.</li>
+                    </ul>
+                </li>
+                <li><strong>Niveles de Riesgo:</strong> <span class="bg-red-100 text-red-800 px-1 font-bold rounded text-xs force-bg">[Crítico]</span> Afecta directamente el cierre o comisiones. <span class="bg-yellow-100 text-yellow-800 px-1 font-bold rounded text-xs force-bg">[Mayor]</span> Métricas clave. <span class="bg-blue-100 text-blue-800 px-1 font-bold rounded text-xs force-bg">[Menor]</span> Administrativo.</li>
+            </ul>
+        </div>
+
+        <script>
+            const data = {
+                "MÓDULO 1: CULTURA, DISCIPLINA Y GESTIÓN DE CONTACTOS": {
+                    roles: ["AUDITOR", "ADMINISTRADOR", "GERENTE", "ASESOR EVALUADO"],
+                    tasks: {
+                        "1. CULTURA Y DISCIPLINA OPERATIVA (TARJETAS 2 Y 16)": [
+                            { t: "Evita el uso de internet/celular para asuntos personales o pláticas familiares en guardia", r: "Mayor" },
+                            { t: "Mantiene limpio su lugar de trabajo y asume el costo de daños al mobiliario o equipo de oficina", r: "Menor" }
+                        ],
+                        "2. RECEPCIÓN DE LLAMADAS Y CRM (TARJETAS 1 Y 13)": [
+                            { t: "Utiliza y domina el guion telefónico institucional para venta y muestreo", r: "Crítico" },
+                            { t: "Filtra adecuadamente al prospecto y oferta máx. 4 inmuebles en la llamada", r: "Mayor" },
+                            { t: "100% de llamadas (propietarios/compradores) son registradas en AM Software inmediatamente", r: "Crítico" },
+                            { t: "Alinea sus registros personales/agenda con los folios del administrador sin discrepancias", r: "Mayor" }
+                        ]
+                    }
+                },
+                "MÓDULO 2: PROSPECCIÓN, VISITAS Y CAPTACIÓN (VENTA Y RENTA)": {
+                    roles: ["AUDITOR", "COORDINADOR PUBLICIDAD", "GERENTE", "ASESOR EVALUADO"],
+                    tasks: {
+                        "1. CAMBACEO Y LEVANTAMIENTO (TARJETAS 4, 5 Y 10)": [
+                            { t: "Participa en el cambaceo programado (puntualidad 30 min antes, sin tolerancia)", r: "Mayor" },
+                            { t: "Llega a citas de levantamiento 10 min antes, imagen ejecutiva, y verifica viabilidad (DDP)", r: "Crítico" },
+                            { t: "Acompaña al coordinador de valuación y asesora al propietario en exenciones de ISR", r: "Mayor" },
+                            { t: "Formaliza la firma del contrato de exclusiva y entrega el Dictamen de Valor / ODV al cliente", r: "Crítico" }
+                        ],
+                        "2. CAPTACIÓN DE ARRENDAMIENTOS (TARJETAS 19 Y 20)": [
+                            { t: "Sugiere contratar póliza jurídica o afianzadora desde la captación del arrendamiento", r: "Mayor" },
+                            { t: "Calcula y presenta estudio de rentabilidad (Inmueble Rentable) y capacidad de compra", r: "Crítico" },
+                            { t: "Prioriza seguridad sobre precio: Si el arrendatario no puede garantizar la renta, no se renta", r: "Crítico" }
+                        ]
+                    }
+                },
+                "MÓDULO 3: MUESTREOS, PUBLICIDAD Y OPERACIONES COMPARTIDAS": {
+                    roles: ["AUDITOR", "COORDINADOR TRAMITES", "GERENTE", "ASESOR EVALUADO"],
+                    tasks: {
+                        "1. MUESTREO Y SHADOWING EN CAMPO (TARJETAS 3 Y 20)": [
+                            { t: "Evaluación en campo (Shadowing): Gerente valida aplicación correcta de perfilamiento", r: "Crítico" },
+                            { t: "Lleva fichas técnicas impresas y expone el proceso de cierre al finalizar la visita", r: "Mayor" }
+                        ],
+                        "2. LOCALIZACIÓN Y OPERACIONES COMPARTIDAS (TARJETA 8.5)": [
+                            { t: "Envía solicitud de servicios y contrato de localización 24h antes (Comisión en precio)", r: "Crítico" },
+                            { t: "Firma acuerdos por escrito (compartir 50% de comisión) PREVIO a mostrar inmuebles externos", r: "Crítico" }
+                        ],
+                        "3. PROMOCIÓN DEL INMUEBLE (TARJETAS 4 Y 9)": [
+                            { t: "Coloca los paquetes de publicidad completos en tiempo y forma mensual, reportando estadísticas", r: "Crítico" }
+                        ]
+                    }
+                },
+                "MÓDULO 4: BLINDAJE DE NEGOCIACIÓN, TRÁMITES Y CIERRE": {
+                    roles: ["AUDITOR", "ADMINISTRADOR", "GERENTE", "ASESOR EVALUADO"],
+                    tasks: {
+                        "1. NEGOCIACIÓN Y BLINDAJE DE COMISIÓN (TARJETA 7 Y 8.5)": [
+                            { t: "BLINDAJE (Tolerancia Cero): Prohíbe intercambio de números entre comprador y vendedor previo a firma", r: "Crítico" },
+                            { t: "Verifica viabilidad financiera (Crédito / Nómina y Fiador en rentas) antes de firmar promesa", r: "Crítico" },
+                            { t: "Recupera la comisión total (o 50% en localización) AL MOMENTO de la recepción del enganche/firma", r: "Crítico" }
+                        ],
+                        "2. TRÁMITES LEGALES Y NOTARIALES (TARJETA 7)": [
+                            { t: "Carta de liberación por Ley de Extinción de Dominio recabada (Arrendamientos)", r: "Crítico" },
+                            { t: "Acompaña al propietario a obtener Predial, Agua, CIZ, certificados para la notaría", r: "Crítico" },
+                            { t: "Asegura integración del expediente físico EPALIA y lo entrega COMPLETO al administrador", r: "Crítico" }
+                        ],
+                        "3. ESCRITURACIÓN Y ENTREGA (TARJETA 7 Y 21)": [
+                            { t: "Verifica inmueble desocupado, limpio y con llaves 2 días antes de firma notarial / entrega", r: "Crítico" },
+                            { t: "Asiste junto con el gerente a la firma de Escritura Definitiva ante Notario", r: "Crítico" },
+                            { t: "Completa los registros de cierre en AM Software tras finalizar la operación", r: "Mayor" }
+                        ]
+                    }
+                }
+            };
+
+            function getRiskStyle(level) {
+                if(level === 'Crítico') return 'bg-red-100 text-red-800 border-red-200 force-bg';
+                if(level === 'Mayor') return 'bg-yellow-100 text-yellow-800 border-yellow-200 force-bg';
+                return 'bg-blue-100 text-blue-800 border-blue-200 force-bg';
+            }
+
+            function generateAuditTable(tasksObj) {
+                let rows = '';
+                for (const [title, tasks] of Object.entries(tasksObj)) {
+                    rows += `
+                        <tr class="bg-slate-100 font-bold border-b border-gray-300 page-break-inside-avoid force-bg">
+                            <td colspan="4" class="p-2 text-sm text-slate-800">${title}</td>
+                        </tr>
+                    `;
+                    tasks.forEach(task => {
+                        const riskClass = getRiskStyle(task.r);
+                        rows += `
+                            <tr class="hover:bg-gray-50 border-b border-gray-200 page-break-inside-avoid">
+                                <td class="p-2 text-sm w-5/12 leading-tight">
+                                    <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold border mb-1 mr-1 ${riskClass}" data-risk="${task.r}">${task.r.toUpperCase()}</span>
+                                    ${task.t}
+                                </td>
+                                <td class="p-2 text-center w-24">
+                                    <select class="form-select eval-select text-xs font-bold w-full bg-white">
+                                        <option value=""></option>
+                                        <option value="C">C</option>
+                                        <option value="NC">NC</option>
+                                        <option value="CP">CP</option>
+                                        <option value="NA">NA</option>
+                                    </select>
+                                </td>
+                                <td class="p-2 w-3/12"><textarea class="form-input text-xs w-full h-10 resize-none" placeholder="Evidencia..."></textarea></td>
+                                <td class="p-2 w-3/12"><textarea class="form-input text-xs w-full h-10 resize-none" placeholder="Observaciones..."></textarea></td>
+                            </tr>
+                        `;
+                    });
+                }
+                return `
+                <div class="overflow-x-auto mb-2">
+                    <table class="w-full border border-gray-300 shadow-sm text-left bg-white">
+                        <thead class="bg-indigo-900 text-white force-bg">
+                            <tr>
+                                <th class="p-2 font-bold text-sm border-r border-indigo-800 text-white">REQUISITO OPERATIVO (MANUALES / TARJETAS)</th>
+                                <th class="p-2 font-bold text-sm text-center border-r border-indigo-800 text-white">RESULTADO</th>
+                                <th class="p-2 font-bold text-sm border-r border-indigo-800 text-white">EVIDENCIA AUDITADA</th>
+                                <th class="p-2 font-bold text-sm text-white">OBSERVACIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
+                `;
+            }
+
+            function generateSignoff(roles) {
+                return `
+                <div class="bg-gray-50 p-4 border border-gray-300 rounded shadow-sm mb-8 page-break-inside-avoid force-bg">
+                    <h4 class="font-bold text-gray-700 mb-4 text-center border-b pb-2">DICTAMEN DEL MÓDULO</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4 px-4">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-gray-600">Puntos Auditados:</span>
+                            <input type="text" class="form-input mt-1 calc-total bg-gray-100" readonly placeholder="0">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-gray-600">Puntos Logrados:</span>
+                            <input type="text" class="form-input mt-1 calc-puntos bg-gray-100" readonly placeholder="0">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-gray-600">CALIFICACIÓN DE MÓDULO (%):</span>
+                            <input type="text" class="form-input mt-1 font-bold text-lg text-center calc-porcentaje bg-white" readonly placeholder="0.0%">
+                        </div>
+                    </div>
+                    <div class="mt-4 mb-6 p-4 rounded text-sm hidden advice-container force-bg"></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-8">
+                        ${roles.map(role => `
+                            <div class="px-2">
+                                <input type="text" class="form-input mb-1 text-center" placeholder="Nombre">
+                                <input type="text" class="form-input mb-1 text-center" placeholder="Firma / Validación">
+                                <input type="date" class="form-input mb-1 text-center text-xs">
+                                <div class="font-semibold text-[10px] text-gray-600 border-t border-gray-400 pt-1 mt-1">${role}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                `;
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const container = document.getElementById('main-container');
+                let contentHTML = '';
+
+                for (const [area, areaData] of Object.entries(data)) {
+                    contentHTML += `
+                        <div class="mb-12 audit-section" data-module-name="${area}">
+                            <h3 class="text-2xl font-bold text-indigo-900 mb-4 tracking-wide uppercase force-bg">${area}</h3>
+                            ${generateAuditTable(areaData.tasks)}
+                            ${generateSignoff(areaData.roles)}
+                        </div>
+                    `;
+                }
+                
+                // Sección del Plan de Acción y de la Firma Digital Integrada
+                contentHTML += `
+                    <h2 class="text-3xl font-bold mb-6 border-b-2 border-indigo-800 pb-2 mt-8 page-break text-indigo-900 force-bg">PLAN DE ACCIÓN CORRECTIVA Y VALIDACIÓN DIGITAL</h2>
+                    <p class="mb-4 text-sm text-gray-600">Documentar hallazgos que ameriten retroalimentación o actas administrativas por fallas críticas.</p>
+                    <table class="w-full border border-gray-300 shadow-sm text-left bg-white mb-8">
+                        <thead class="bg-slate-800 text-white force-bg">
+                            <tr>
+                                <th class="p-2 font-bold text-sm w-1/4 text-white">FALLA DETECTADA</th>
+                                <th class="p-2 font-bold text-sm w-1/4 text-white">MEDIDA CORRECTIVA</th>
+                                <th class="p-2 font-bold text-sm text-white">CONSECUENCIA</th>
+                                <th class="p-2 font-bold text-sm text-white">FECHA LÍMITE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${Array(4).fill().map(() => `
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-2"><textarea class="form-input text-xs w-full h-12 resize-none"></textarea></td>
+                                    <td class="p-2"><textarea class="form-input text-xs w-full h-12 resize-none"></textarea></td>
+                                    <td class="p-2"><input type="text" class="form-input text-xs w-full" placeholder="% / Sanción"></td>
+                                    <td class="p-2"><input type="date" class="form-input text-xs w-full"></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+
+                    <!-- SECCIÓN DE FIRMA DIGITAL -->
+                    <div class="mt-8 p-6 bg-slate-50 border border-slate-300 rounded-lg shadow-sm page-break-inside-avoid force-bg">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-bold text-slate-800 text-base">VALIDACIÓN Y FIRMA DIGITAL DEL ASESOR</h4>
+                            <button type="button" onclick="limpiarFirma()" class="no-print bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold py-1 px-3 rounded transition-all">Limpiar Firma</button>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-3">Firmar dentro del recuadro utilizando el dedo en dispositivos móviles o el ratón en computadora.</p>
+                        <div class="flex justify-center bg-white border border-slate-300 rounded p-2">
+                            <canvas id="signature-canvas" width="600" height="150" class="w-full max-w-xl h-36 rounded"></canvas>
+                        </div>
+                    </div>
+                `;
+
+                container.insertAdjacentHTML('beforeend', contentHTML);
+
+                // Inicializar Canvas de Firma Digital
+                inicializarCanvasFirma();
+
+                container.addEventListener('change', function(e) {
+                    if (e.target.classList.contains('eval-select')) {
+                        const section = e.target.closest('.audit-section');
+                        if (section) {
+                            const selects = section.querySelectorAll('.eval-select');
+                            let totalAudited = 0;
+                            let totalPoints = 0;
+                            let criticalFails = 0;
+
+                            selects.forEach(sel => {
+                                const val = sel.value;
+                                const riskLevel = sel.closest('tr').querySelector('span[data-risk]').getAttribute('data-risk');
+
+                                if (val === 'C' || val === 'NC' || val === 'CP') totalAudited++;
+                                if (val === 'C') totalPoints += 1;
+                                else if (val === 'CP') totalPoints += 0.5;
+                                else if (val === 'NC' && riskLevel === 'Crítico') criticalFails++;
+                            });
+
+                            const percentage = totalAudited > 0 ? ((totalPoints / totalAudited) * 100).toFixed(1) : 0.0;
+                            section.querySelector('.calc-total').value = totalAudited;
+                            section.querySelector('.calc-puntos').value = totalPoints;
+                            section.setAttribute('data-criticals', criticalFails);
+                            
+                            const pctInput = section.querySelector('.calc-porcentaje');
+                            const adviceContainer = section.querySelector('.advice-container');
+                            if (pctInput) {
+                                pctInput.value = percentage + '%';
+                                pctInput.className = 'form-input mt-1 font-bold text-lg text-center bg-white ' + (criticalFails > 0 ? 'bg-red-100 text-red-800' : percentage >= 90 ? 'bg-green-100 text-green-800' : percentage >= 70 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800');
+                                
+                                if(totalAudited > 0) {
+                                    adviceContainer.classList.remove('hidden');
+                                    if (criticalFails > 0) {
+                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-red-100 text-red-900 border border-red-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>⛔ SANCIÓN OBLIGATORIA (Falla Crítica de Proceso)</strong><br><span class='mt-1 block'>Falla en proceso crítico. Se requiere intervención del Gerente según Tarjeta 18.</span>";
+                                    } else if (percentage >= 90) {
+                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-green-100 text-green-900 border border-green-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>✓ DESEMPEÑO TOP (Excelencia Comercial)</strong><br><span class='mt-1 block'>Dominio perfecto de los manuales en este módulo.</span>";
+                                    } else if (percentage >= 70) {
+                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-yellow-100 text-yellow-900 border border-yellow-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>⚠ DESEMPEÑO REGULAR (Riesgo Latente)</strong><br><span class='mt-1 block'>Cumplimiento superficial. Agendar entrevista de alineación.</span>";
+                                    } else {
+                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-red-100 text-red-900 border border-red-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>⛔ DESEMPEÑO DEFICIENTE (Plan de Mejora Urgente)</strong><br><span class='mt-1 block'>Indisciplina sistémica. Requiere re-entrenamiento (T18).</span>";
+                                    }
+                                } else {
+                                    adviceContainer.classList.add('hidden');
+                                }
+                            }
+
+                            recalcularGlobal();
+                        }
+                    }
+                });
+            });
+
+            function recalcularGlobal() {
+                let globalTotal = 0;
+                let globalPts = 0;
+                let globalCriticals = 0;
+                
+                document.querySelectorAll('.audit-section').forEach(sec => {
+                    globalTotal += parseFloat(sec.querySelector('.calc-total').value) || 0;
+                    globalPts += parseFloat(sec.querySelector('.calc-puntos').value) || 0;
+                    globalCriticals += parseInt(sec.getAttribute('data-criticals')) || 0;
+                });
+
+                const globalPercentage = globalTotal > 0 ? ((globalPts / globalTotal) * 100).toFixed(1) : 0.0;
+                document.getElementById('global-audited').value = globalTotal;
+                document.getElementById('global-points').value = globalPts;
+                document.getElementById('global-critical').value = globalCriticals;
+                document.getElementById('global-pct').value = globalPercentage + '%';
+            }
+
+            let canvas, ctx, dibujando = false;
+            function inicializarCanvasFirma() {
+                canvas = document.getElementById('signature-canvas');
+                if (!canvas) return;
+                ctx = canvas.getContext('2d');
+                ctx.strokeStyle = '#1e1b4b';
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+
+                // Eventos de ratón
+                canvas.addEventListener('mousedown', empezarTrazo);
+                canvas.addEventListener('mousemove', trazar);
+                canvas.addEventListener('mouseup', detenerTrazo);
+                canvas.addEventListener('mouseleave', detenerTrazo);
+
+                // Eventos táctiles (Móviles / Tablets)
+                canvas.addEventListener('touchstart', (e) => { empezarTrazo(e.touches[0]); e.preventDefault(); });
+                canvas.addEventListener('touchmove', (e) => { trazar(e.touches[0]); e.preventDefault(); });
+                canvas.addEventListener('touchend', detenerTrazo);
+            }
+
+            function obtenerPosicion(e) {
+                const rect = canvas.getBoundingClientRect();
+                return {
+                    x: (e.clientX - rect.left) * (canvas.width / rect.width),
+                    y: (e.clientY - rect.top) * (canvas.height / rect.height)
+                };
+            }
+
+            function empezarTrazo(e) {
+                dibujando = true;
+                const pos = obtenerPosicion(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+            }
+
+            function trazar(e) {
+                if (!dibujando) return;
+                const pos = obtenerPosicion(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            }
+
+            function detenerTrazo() {
+                dibujando = false;
+            }
+
+            function limpiarFirma() {
+                if(ctx && canvas) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+
+            function construirReporteTexto() {
+                const nombre = document.getElementById('eval-nombre').value || "No especificado";
+                const telefono = document.getElementById('eval-telefono').value || "No especificado";
+                const correo = document.getElementById('eval-correo').value || "No especificado";
+                const fecha = document.getElementById('eval-fecha').value || "No especificada";
+
+                let reporte = "*📊 REPORTE DE AUDITORÍA - AM BIENES RAÍCES / VALUAMEX®*\n\n";
+                reporte += `*Asesor Evaluado:* ${nombre}\n`;
+                reporte += `*Teléfono:* ${telefono}\n`;
+                reporte += `*Correo:* ${correo}\n`;
+                reporte += `*Fecha:* ${fecha}\n\n`;
+                reporte += `*Score Global:* ${document.getElementById('global-pct').value}\n`;
+                reporte += `*Puntos Logrados:* ${document.getElementById('global-points').value} / ${document.getElementById('global-audited').value}\n`;
+                reporte += `*Fallas Críticas:* ${document.getElementById('global-critical').value}\n\n`;
+
+                document.querySelectorAll('.audit-section').forEach(sec => {
+                    const modName = sec.getAttribute('data-module-name');
+                    const modPct = sec.querySelector('.calc-porcentaje').value || '0.0%';
+                    reporte += `• ${modName} ➔ *${modPct}*\n`;
+                });
+
+                reporte += "\n_Generado desde el Dashboard de Auditoría AM 2026_";
+                return reporte;
+            }
+
+            function enviarWhatsApp() {
+                const texto = construirReporteTexto();
+                const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`;
+                window.open(url, '_blank');
+            }
+
+            function enviarCorreo() {
+                const texto = construirReporteTexto();
+                const nombreAsesor = document.getElementById('eval-nombre').value || "Asesor";
+                const asunto = encodeURIComponent(`Reporte de Auditoría - ${nombreAsesor} - AM Bienes Raíces`);
+                const cuerpo = encodeURIComponent(texto);
+                window.location.href = `mailto:?subject=${asunto}&body=${cuerpo}`;
+            }
+        </script>
+        
+        <div class="mt-8 text-center text-xs text-gray-400 no-print">
+            <p>Formato de auditoría de asesores integrando reglas operativas (Tarjetas 1-24) de AM Bienes Raíces / Valuamex®.</p>
+        </div>
+    </div>
+</body>
+</html>
