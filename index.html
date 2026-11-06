@@ -46,7 +46,7 @@
         <div class="text-center mb-6 border-b-4 border-indigo-700 pb-6">
             <h1 class="text-2xl md:text-4xl font-extrabold mb-2 text-indigo-900 tracking-tight force-bg">AM AUDITORÍA 2026</h1>
             <h2 class="text-lg md:text-2xl font-bold text-gray-700">DASHBOARD DE EVALUACIÓN Y CONTROL DE ASESORES</h2>
-            <p class="text-xs md:text-sm mt-2 text-gray-500 font-medium">AM Bienes Raíces / Valuamex® — Arrendamientos, Operaciones Compartidas, Cultura y Blindaje de Comisión</p>
+            <p class="text-xs md:text-sm mt-2 text-gray-500 font-medium">AM Bienes Raíces / Valuamex® — Arrendamientos, Compartidas, Seguimiento, Cultura y Blindaje</p>
         </div>
 
         <!-- TARJETA DE DATOS DEL ASESOR EVALUADO -->
@@ -54,7 +54,7 @@
             <h3 class="text-base md:text-lg font-bold text-indigo-900 mb-4 border-b border-indigo-200 pb-2">DATOS GENERALES DEL ASESOR EVALUADO</h3>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
-                    <label class="block text-xs font-bold text-indigo-900 mb-1">Nombre Completo del Asesor:</label>
+                    <label class="block text-xs font-bold text-indigo-900 mb-1">Nombre del Asesor:</label>
                     <input type="text" id="eval-nombre" class="form-input bg-white text-sm" placeholder="Ej. Juan Pérez">
                 </div>
                 <div>
@@ -98,8 +98,8 @@
         <div class="mb-8 p-4 bg-gray-50 border border-gray-200 rounded text-xs md:text-sm page-break-inside-avoid">
             <h4 class="font-bold mb-2">Instrucciones de Llenado:</h4>
             <ul class="list-disc pl-5 space-y-1.5">
-                <li><strong>(C) Cumple:</strong> 1 punto. | <strong>(CP) Cumple Parcialmente:</strong> 0.5 puntos. | <strong>(NC) No Cumple:</strong> 0 puntos. | <strong>(NA) No Aplica:</strong> Excluido del cálculo.</li>
-                <li><strong>Niveles:</strong> <span class="text-red-700 font-bold">[Crítico]</span> Afecta cierres/comisión. <span class="text-yellow-700 font-bold">[Mayor]</span> Operativo clave. <span class="text-blue-700 font-bold">[Menor]</span> Administrativo.</li>
+                <li><strong>(C) Cumple:</strong> 1 pt. | <strong>(CP) Cumple Parcialmente:</strong> 0.5 pts. | <strong>(NC) No Cumple:</strong> 0 pts. | <strong>(NA) No Aplica:</strong> Se excluye del cálculo.</li>
+                <li><strong>Niveles de Riesgo:</strong> <span class="text-red-700 font-bold">[Crítico]</span> Afecta cierres y comisiones directamente. <span class="text-yellow-700 font-bold">[Mayor]</span> Afecta la calidad operativa. <span class="text-blue-700 font-bold">[Menor]</span> Administrativo/Disciplina.</li>
             </ul>
         </div>
 
@@ -152,7 +152,7 @@
                         ]
                     }
                 },
-                "MÓDULO 4: BLINDAJE DE NEGOCIACIÓN, TRÁMITES Y CIERRE": {
+                "MÓDULO 4: BLINDAJE DE NEGOCIACIÓN Y CIERRE": {
                     roles: ["AUDITOR", "ADMINISTRADOR", "GERENTE", "ASESOR EVALUADO"],
                     tasks: {
                         "1. NEGOCIACIÓN Y BLINDAJE DE COMISIÓN (TARJETA 7 Y 8.5)": [
@@ -162,13 +162,25 @@
                         ],
                         "2. TRÁMITES LEGALES Y NOTARIALES (TARJETA 7)": [
                             { t: "Carta de liberación por Ley de Extinción de Dominio recabada (Arrendamientos)", r: "Crítico" },
-                            { t: "Acompaña al propietario a obtener Predial, Agua, CIZ, certificados para la notaría", r: "Crítico" },
-                            { t: "Asegura integración del expediente físico EPALIA y lo entrega COMPLETO al administrador", r: "Crítico" }
+                            { t: "Acompaña al propietario a obtener Predial, Agua, CIZ, certificados para la notaría", r: "Crítico" }
                         ],
                         "3. ESCRITURACIÓN Y ENTREGA (TARJETA 7 Y 21)": [
                             { t: "Verifica inmueble desocupado, limpio y con llaves 2 días antes de firma notarial / entrega", r: "Crítico" },
-                            { t: "Asiste junto con el gerente a la firma de Escritura Definitiva ante Notario", r: "Crítico" },
-                            { t: "Completa los registros de cierre en AM Software tras finalizar la operación", r: "Mayor" }
+                            { t: "Asiste junto con el gerente a la firma de Escritura Definitiva ante Notario", r: "Crítico" }
+                        ]
+                    }
+                },
+                "MÓDULO 5: SEGUIMIENTO, EXPEDIENTES Y POST-VENTA": {
+                    roles: ["AUDITOR", "ADMINISTRADOR", "GERENTE", "ASESOR EVALUADO"],
+                    tasks: {
+                        "1. COMUNICACIÓN CONSTANTE CON CLIENTES (TARJETAS 4, 7 Y 19)": [
+                            { t: "Contacta al cliente comprador y vendedor mínimo 1 vez por semana tras la firma para informar avances del trámite.", r: "Mayor" },
+                            { t: "Entrega informes mensuales al propietario sobre labores de promoción (Mes 1, Mes 2, Mes 3).", r: "Mayor" }
+                        ],
+                        "2. CONTROLES Y EXPEDIENTES ADMINISTRATIVOS (TARJETAS 13 Y 14)": [
+                            { t: "Llena y da seguimiento puntual a los Check Lists de clientes y Check List de proceso de compraventa.", r: "Crítico" },
+                            { t: "Escanea y resguarda de manera INMEDIATA cada documento físico en la carpeta digital del cliente (AM SOFTWARE).", r: "Crítico" },
+                            { t: "Completa los registros finales y el cierre administrativo en AM Software tras finalizar la operación notarial.", r: "Mayor" }
                         ]
                     }
                 }
@@ -241,7 +253,9 @@
                             <input type="text" class="form-input mt-1 font-bold text-base md:text-lg text-center calc-porcentaje bg-white transition-colors" readonly placeholder="0.0%">
                         </div>
                     </div>
+                    <!-- CONTENEDOR DE RETROALIMENTACIÓN DE LÍDER -->
                     <div class="mt-4 mb-4 p-3 rounded text-xs md:text-sm hidden advice-container force-bg"></div>
+                    
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center mt-6">
                         ${roles.map(role => `
                             <div class="px-1 border border-gray-200 p-2 rounded bg-white">
@@ -272,14 +286,14 @@
                 
                 contentHTML += `
                     <h2 class="text-xl md:text-3xl font-bold mb-4 border-b-2 border-indigo-800 pb-2 mt-8 page-break text-indigo-900 force-bg">PLAN DE ACCIÓN CORRECTIVA Y VALIDACIÓN DIGITAL</h2>
-                    <p class="mb-4 text-xs md:text-sm text-gray-600">Documentar hallazgos que ameriten retroalimentación o actas administrativas por fallas críticas.</p>
+                    <p class="mb-4 text-xs md:text-sm text-gray-600">Documentar hallazgos que ameriten retroalimentación de liderazgo (Tarjeta 18) para corregir áreas de oportunidad.</p>
                     <div class="overflow-x-auto mb-8">
                         <table class="w-full border border-gray-300 shadow-sm text-left bg-white text-xs">
                             <thead class="bg-slate-800 text-white force-bg">
                                 <tr>
-                                    <th class="p-2 font-bold text-xs text-white">FALLA DETECTADA</th>
-                                    <th class="p-2 font-bold text-xs text-white">MEDIDA CORRECTIVA</th>
-                                    <th class="p-2 font-bold text-xs text-white">CONSECUENCIA</th>
+                                    <th class="p-2 font-bold text-xs text-white">ÁREA DE OPORTUNIDAD (Falla)</th>
+                                    <th class="p-2 font-bold text-xs text-white">ACUERDO DE MENTORING (Solución)</th>
+                                    <th class="p-2 font-bold text-xs text-white">CONSECUENCIA (Si aplica)</th>
                                     <th class="p-2 font-bold text-xs text-white">FECHA LÍMITE</th>
                                 </tr>
                             </thead>
@@ -351,25 +365,32 @@
                             
                             if (pctInput) {
                                 pctInput.value = percentage + '%';
-                                // ¡LA CLAVE ESTÁ AQUÍ! Se mantiene "calc-porcentaje" para que nunca desaparezca.
+                                
+                                // Lógica de colores con rangos más objetivos (Top 90, Optimo 75, Regular 60, Deficiente < 60)
                                 pctInput.className = 'form-input mt-1 font-bold text-base md:text-lg text-center calc-porcentaje transition-colors ' + 
                                     (criticalFails > 0 ? 'bg-red-100 text-red-800' : 
                                     percentage >= 90 ? 'bg-green-100 text-green-800' : 
-                                    percentage >= 70 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800');
+                                    percentage >= 75 ? 'bg-blue-100 text-blue-800' : 
+                                    percentage >= 60 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800');
                                 
                                 if (totalAudited > 0) {
+                                    adviceContainer.classList.remove('hidden');
+                                    // RETROALIMENTACIÓN DE LÍDER (Objetiva, Certera y Motivadora basada en manuales)
                                     if (criticalFails > 0) {
-                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-red-100 text-red-900 border border-red-300 force-bg';
-                                        adviceContainer.innerHTML = "<strong>⛔ SANCIÓN OBLIGATORIA (Falla Crítica de Proceso)</strong><br><span class='mt-1 block'>Falla en proceso crítico. Se requiere intervención del Gerente según Tarjeta 18.</span>";
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-red-50 text-red-900 border border-red-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>🔴 ATENCIÓN PRIORITARIA (Falla Crítica)</strong><br><span class='mt-1 block text-gray-700'>Detectamos una desviación en un proceso de Tolerancia Cero. Como tu líder, mi deber es proteger tus comisiones y la operación de la empresa. Aplicaremos el método de la Tarjeta 18 para analizar qué pasó, corregirlo de inmediato y asegurar que no vuelva a ocurrir. ¡Vamos a solucionarlo!</span>";
                                     } else if (percentage >= 90) {
-                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-green-100 text-green-900 border border-green-300 force-bg';
-                                        adviceContainer.innerHTML = "<strong>✓ DESEMPEÑO TOP (Excelencia Comercial)</strong><br><span class='mt-1 block'>Dominio perfecto de los manuales en este módulo.</span>";
-                                    } else if (percentage >= 70) {
-                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-yellow-100 text-yellow-900 border border-yellow-300 force-bg';
-                                        adviceContainer.innerHTML = "<strong>⚠ DESEMPEÑO REGULAR (Riesgo Latente)</strong><br><span class='mt-1 block'>Cumplimiento superficial. Agendar entrevista de alineación.</span>";
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-green-50 text-green-900 border border-green-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>✓ DESEMPEÑO SOBRESALIENTE (Nivel Experto)</strong><br><span class='mt-1 block text-gray-700'>Tu ejecución en este módulo es impecable. Has entendido que la disciplina es la base del éxito. Como gerente, reconozco tu enfoque; sigue siendo el gran ejemplo para todo el equipo de AM Bienes Raíces.</span>";
+                                    } else if (percentage >= 75) {
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-blue-50 text-blue-900 border border-blue-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>👍 DESEMPEÑO ÓPTIMO (Buen Trabajo)</strong><br><span class='mt-1 block text-gray-700'>Tienes un control sólido de tus actividades, aunque detectamos pequeños detalles finos por pulir. En nuestra próxima entrevista semanal (Tarjeta 17) trazaremos la estrategia para llevarte a la excelencia. ¡Vas muy bien!</span>";
+                                    } else if (percentage >= 60) {
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-yellow-50 text-yellow-900 border border-yellow-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>⚠ ÁREAS DE OPORTUNIDAD (Requiere Mentoring)</strong><br><span class='mt-1 block text-gray-700'>Tu trabajo está mostrando inconsistencias operativas que te hacen perder efectividad. Como tu líder, te ayudaré haciendo un plan de acción para alinear tus rutinas. Recuerda, el manual está diseñado para hacer tu trabajo más fácil y rentable.</span>";
                                     } else {
-                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-red-100 text-red-900 border border-red-300 force-bg';
-                                        adviceContainer.innerHTML = "<strong>⛔ DESEMPEÑO DEFICIENTE (Plan de Mejora Urgente)</strong><br><span class='mt-1 block'>Indisciplina sistémica. Requiere re-entrenamiento (T18).</span>";
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-red-50 text-red-900 border border-red-300 force-bg';
+                                        adviceContainer.innerHTML = "<strong>⛔ PLAN DE APOYO (Rendimiento Deficiente)</strong><br><span class='mt-1 block text-gray-700'>El sistema refleja que te estás saltando pasos fundamentales. Para que logres tus metas económicas, aplicaré contigo el principio de la Tarjeta 18: <em>'Enseñar, hacer junto contigo y supervisar'</em>. Confío en tu potencial, ahora toca ponerle disciplina.</span>";
                                     }
                                 } else {
                                     adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container hidden force-bg';
@@ -401,11 +422,11 @@
                 const gPctEl = document.getElementById('global-pct');
                 gPctEl.value = globalPercentage + '%';
                 
-                // Color dinámico también para el panel global
                 gPctEl.className = 'mt-1 w-full font-bold text-2xl md:text-3xl text-center rounded py-2 border-none force-bg transition-colors ' +
                     (globalCriticals > 0 ? 'bg-red-900 text-white' : 
                      globalPercentage >= 90 ? 'bg-emerald-600 text-white' : 
-                     globalPercentage >= 70 ? 'bg-yellow-600 text-white' : 'bg-red-900 text-white');
+                     globalPercentage >= 75 ? 'bg-blue-600 text-white' : 
+                     globalPercentage >= 60 ? 'bg-yellow-600 text-white' : 'bg-red-900 text-white');
             }
 
             let canvas, ctx, dibujando = false;
