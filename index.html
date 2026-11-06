@@ -338,13 +338,13 @@
                                 const riskLevel = riskSpan ? riskSpan.getAttribute('data-risk') : '';
 
                                 if (val === 'C') {
-                                    totalAudited++;
+                                    totalAudited += 1;
                                     totalPoints += 1;
                                 } else if (val === 'CP') {
-                                    totalAudited++;
+                                    totalAudited += 1;
                                     totalPoints += 0.5;
                                 } else if (val === 'NC') {
-                                    totalAudited++;
+                                    totalAudited += 1;
                                     totalPoints += 0;
                                     if (riskLevel === 'Crítico') {
                                         criticalFails++;
