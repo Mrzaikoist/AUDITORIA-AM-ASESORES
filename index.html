@@ -283,7 +283,6 @@
                     `;
                 }
                 
-                // Sección del Plan de Acción y de la Firma Digital Integrada
                 contentHTML += `
                     <h2 class="text-3xl font-bold mb-6 border-b-2 border-indigo-800 pb-2 mt-8 page-break text-indigo-900 force-bg">PLAN DE ACCIÓN CORRECTIVA Y VALIDACIÓN DIGITAL</h2>
                     <p class="mb-4 text-sm text-gray-600">Documentar hallazgos que ameriten retroalimentación o actas administrativas por fallas críticas.</p>
@@ -308,7 +307,6 @@
                         </tbody>
                     </table>
 
-                    <!-- SECCIÓN DE FIRMA DIGITAL -->
                     <div class="mt-8 p-6 bg-slate-50 border border-slate-300 rounded-lg shadow-sm page-break-inside-avoid force-bg">
                         <div class="flex justify-between items-center mb-3">
                             <h4 class="font-bold text-slate-800 text-base">VALIDACIÓN Y FIRMA DIGITAL DEL ASESOR</h4>
@@ -322,8 +320,6 @@
                 `;
 
                 container.insertAdjacentHTML('beforeend', contentHTML);
-
-                // Inicializar Canvas de Firma Digital
                 inicializarCanvasFirma();
 
                 container.addEventListener('change', function(e) {
@@ -339,10 +335,15 @@
                                 const val = sel.value;
                                 const riskLevel = sel.closest('tr').querySelector('span[data-risk]').getAttribute('data-risk');
 
-                                if (val === 'C' || val === 'NC' || val === 'CP') totalAudited++;
-                                if (val === 'C') totalPoints += 1;
-                                else if (val === 'CP') totalPoints += 0.5;
-                                else if (val === 'NC' && riskLevel === 'Crítico') criticalFails++;
+                                if (val === 'C' || val === 'NC' || val === 'CP') {
+                                    totalAudited++;
+                                    if (val === 'C') totalPoints += 1;
+                                    else if (val === 'CP') totalPoints += 0.5;
+                                    else if (val === 'NC') {
+                                        totalPoints += 0;
+                                        if (riskLevel === 'Crítico') criticalFails++;
+                                    }
+                                }
                             });
 
                             const percentage = totalAudited > 0 ? ((totalPoints / totalAudited) * 100).toFixed(1) : 0.0;
@@ -409,13 +410,11 @@
                 ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
 
-                // Eventos de ratón
                 canvas.addEventListener('mousedown', empezarTrazo);
                 canvas.addEventListener('mousemove', trazar);
                 canvas.addEventListener('mouseup', detenerTrazo);
                 canvas.addEventListener('mouseleave', detenerTrazo);
 
-                // Eventos táctiles (Móviles / Tablets)
                 canvas.addEventListener('touchstart', (e) => { empezarTrazo(e.touches[0]); e.preventDefault(); });
                 canvas.addEventListener('touchmove', (e) => { trazar(e.touches[0]); e.preventDefault(); });
                 canvas.addEventListener('touchend', detenerTrazo);
