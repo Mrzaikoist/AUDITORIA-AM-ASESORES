@@ -19,95 +19,87 @@
             #signature-canvas { border: 1px solid #9ca3af !important; background: white; }
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
-        .form-input { width: 100%; border-radius: 0.375rem; border: 1px solid #d1d5db; padding: 0.25rem 0.5rem; }
-        .form-select { width: 100%; border-radius: 0.375rem; border: 1px solid #d1d5db; padding: 0.25rem 0.5rem; background-color: white; }
+        .form-input { width: 100%; border-radius: 0.375rem; border: 1px solid #d1d5db; padding: 0.35rem 0.5rem; }
+        .form-select { width: 100%; border-radius: 0.375rem; border: 1px solid #d1d5db; padding: 0.35rem 0.5rem; background-color: white; font-weight: bold; }
         #signature-canvas { touch-action: none; background-color: #fafafa; border: 2px dashed #cbd5e1; cursor: crosshair; }
     </style>
 </head>
-<body class="p-4 md:p-8 text-gray-800">
-    <div class="max-w-7xl mx-auto bg-white p-6 md:p-10 shadow-lg rounded-lg print-border" id="main-container">
+<body class="p-3 md:p-8 text-gray-800">
+    <div class="max-w-7xl mx-auto bg-white p-4 md:p-10 shadow-lg rounded-lg print-border" id="main-container">
         
         <!-- BARRA DE ACCESOS DIRECTOS SUPERIOR -->
-        <div class="mb-6 flex flex-wrap justify-end gap-3 no-print sticky top-4 z-20">
-            <button onclick="enviarWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded flex items-center shadow transition-all">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Enviar por WhatsApp
+        <div class="mb-6 flex flex-wrap justify-end gap-2 no-print sticky top-2 z-20 bg-white/90 p-2 rounded shadow-sm backdrop-blur">
+            <button onclick="enviarWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-3 text-xs md:text-sm rounded flex items-center shadow transition-all">
+                <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                WhatsApp
             </button>
-            <button onclick="enviarCorreo()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded flex items-center shadow transition-all">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                Enviar por Correo
+            <button onclick="enviarCorreo()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-3 text-xs md:text-sm rounded flex items-center shadow transition-all">
+                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Correo
             </button>
-            <button onclick="window.print()" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded flex items-center shadow transition-all">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                Imprimir / PDF
+            <button onclick="window.print()" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-3 text-xs md:text-sm rounded flex items-center shadow transition-all">
+                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                PDF
             </button>
         </div>
 
         <div class="text-center mb-6 border-b-4 border-indigo-700 pb-6">
-            <h1 class="text-4xl font-extrabold mb-2 text-indigo-900 tracking-tight force-bg">AM AUDITORÍA 2026</h1>
-            <h2 class="text-2xl font-bold text-gray-700">DASHBOARD DE EVALUACIÓN Y CONTROL DE ASESORES</h2>
-            <p class="text-sm mt-2 text-gray-500 font-medium">AM Bienes Raíces / Valuamex® — Arrendamientos, Operaciones Compartidas, Cultura y Blindaje de Comisión</p>
+            <h1 class="text-2xl md:text-4xl font-extrabold mb-2 text-indigo-900 tracking-tight force-bg">AM AUDITORÍA 2026</h1>
+            <h2 class="text-lg md:text-2xl font-bold text-gray-700">DASHBOARD DE EVALUACIÓN Y CONTROL DE ASESORES</h2>
+            <p class="text-xs md:text-sm mt-2 text-gray-500 font-medium">AM Bienes Raíces / Valuamex® — Arrendamientos, Operaciones Compartidas, Cultura y Blindaje de Comisión</p>
         </div>
 
         <!-- TARJETA DE DATOS DEL ASESOR EVALUADO -->
-        <div class="mb-8 p-6 bg-indigo-50 border border-indigo-200 rounded-lg shadow-sm page-break-inside-avoid force-bg">
-            <h3 class="text-lg font-bold text-indigo-900 mb-4 border-b border-indigo-200 pb-2">DATOS GENERALES DEL ASESOR EVALUADO</h3>
+        <div class="mb-8 p-4 md:p-6 bg-indigo-50 border border-indigo-200 rounded-lg shadow-sm page-break-inside-avoid force-bg">
+            <h3 class="text-base md:text-lg font-bold text-indigo-900 mb-4 border-b border-indigo-200 pb-2">DATOS GENERALES DEL ASESOR EVALUADO</h3>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
                     <label class="block text-xs font-bold text-indigo-900 mb-1">Nombre Completo del Asesor:</label>
-                    <input type="text" id="eval-nombre" class="form-input bg-white" placeholder="Ej. Juan Pérez">
+                    <input type="text" id="eval-nombre" class="form-input bg-white text-sm" placeholder="Ej. Juan Pérez">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-indigo-900 mb-1">Número de Teléfono (WhatsApp):</label>
-                    <input type="tel" id="eval-telefono" class="form-input bg-white" placeholder="Ej. 55 1234 5678">
+                    <input type="tel" id="eval-telefono" class="form-input bg-white text-sm" placeholder="Ej. 55 1234 5678">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-indigo-900 mb-1">Correo Electrónico:</label>
-                    <input type="email" id="eval-correo" class="form-input bg-white" placeholder="asesor@ambienesraices.com">
+                    <input type="email" id="eval-correo" class="form-input bg-white text-sm" placeholder="asesor@ambienesraices.com">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-indigo-900 mb-1">Fecha de Evaluación:</label>
-                    <input type="date" id="eval-fecha" class="form-input bg-white">
+                    <input type="date" id="eval-fecha" class="form-input bg-white text-sm">
                 </div>
             </div>
         </div>
 
         <!-- SCORE GLOBAL DASHBOARD -->
-        <div class="mb-8 p-6 bg-slate-800 text-white rounded-lg shadow-md page-break-inside-avoid force-bg">
-            <h3 class="text-xl font-bold text-center mb-4 border-b border-slate-600 pb-2">RENDIMIENTO GLOBAL DEL ASESOR</h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+        <div class="mb-8 p-4 md:p-6 bg-slate-800 text-white rounded-lg shadow-md page-break-inside-avoid force-bg">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-4 border-b border-slate-600 pb-2">RENDIMIENTO GLOBAL DEL ASESOR</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
-                    <p class="text-sm text-slate-300 font-semibold uppercase">Puntos Auditados</p>
-                    <input type="text" id="global-audited" class="mt-2 w-full bg-slate-700 text-white font-bold text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
+                    <p class="text-xs md:text-sm text-slate-300 font-semibold uppercase">Puntos Auditados</p>
+                    <input type="text" id="global-audited" class="mt-1 w-full bg-slate-700 text-white font-bold text-xl md:text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
                 </div>
                 <div>
-                    <p class="text-sm text-slate-300 font-semibold uppercase">Puntos Logrados</p>
-                    <input type="text" id="global-points" class="mt-2 w-full bg-slate-700 text-white font-bold text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
+                    <p class="text-xs md:text-sm text-slate-300 font-semibold uppercase">Puntos Logrados</p>
+                    <input type="text" id="global-points" class="mt-1 w-full bg-slate-700 text-white font-bold text-xl md:text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
                 </div>
                 <div>
-                    <p class="text-sm text-slate-300 font-semibold uppercase">Fallas Críticas</p>
-                    <input type="text" id="global-critical" class="mt-2 w-full bg-red-900 text-white font-bold text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
+                    <p class="text-xs md:text-sm text-slate-300 font-semibold uppercase">Fallas Críticas</p>
+                    <input type="text" id="global-critical" class="mt-1 w-full bg-red-900 text-white font-bold text-xl md:text-2xl text-center rounded py-2 border-none force-bg" readonly placeholder="0">
                 </div>
-                <div>
-                    <p class="text-sm text-slate-300 font-semibold uppercase">SCORE TOTAL (%)</p>
-                    <input type="text" id="global-pct" class="mt-2 w-full bg-slate-700 text-white font-bold text-3xl text-center rounded py-2 border-none force-bg" readonly placeholder="0.0%">
+                <div class="col-span-2 md:col-span-1">
+                    <p class="text-xs md:text-sm text-slate-300 font-semibold uppercase">SCORE TOTAL (%)</p>
+                    <input type="text" id="global-pct" class="mt-1 w-full bg-slate-700 text-white font-bold text-2xl md:text-3xl text-center rounded py-2 border-none force-bg transition-colors" readonly placeholder="0.0%">
                 </div>
             </div>
         </div>
 
-        <div class="mb-8 p-4 bg-gray-50 border border-gray-200 rounded text-sm page-break-inside-avoid">
+        <div class="mb-8 p-4 bg-gray-50 border border-gray-200 rounded text-xs md:text-sm page-break-inside-avoid">
             <h4 class="font-bold mb-2">Instrucciones de Llenado:</h4>
-            <ul class="list-disc pl-5 space-y-2">
-                <li>
-                    <strong>Criterio de Evaluación:</strong>
-                    <ul class="list-none pl-4 mt-1 space-y-1">
-                        <li><span class="font-bold bg-green-100 text-green-800 px-1 rounded">(C) Cumple:</span> Ejecución completa y satisfactoria del requisito [1 pt].</li>
-                        <li><span class="font-bold bg-yellow-100 text-yellow-800 px-1 rounded">(CP) Cumple Parcialmente:</span> Ejecución incompleta o a destiempo [0.5 pts].</li>
-                        <li><span class="font-bold bg-red-100 text-red-800 px-1 rounded">(NC) No Cumple:</span> Omisión total o error grave [0 pts].</li>
-                        <li><span class="font-bold bg-gray-200 text-gray-800 px-1 rounded">(NA) No Aplica:</span> Se excluye del cálculo total.</li>
-                    </ul>
-                </li>
-                <li><strong>Niveles de Riesgo:</strong> <span class="bg-red-100 text-red-800 px-1 font-bold rounded text-xs force-bg">[Crítico]</span> Afecta directamente el cierre o comisiones. <span class="bg-yellow-100 text-yellow-800 px-1 font-bold rounded text-xs force-bg">[Mayor]</span> Métricas clave. <span class="bg-blue-100 text-blue-800 px-1 font-bold rounded text-xs force-bg">[Menor]</span> Administrativo.</li>
+            <ul class="list-disc pl-5 space-y-1.5">
+                <li><strong>(C) Cumple:</strong> 1 punto. | <strong>(CP) Cumple Parcialmente:</strong> 0.5 puntos. | <strong>(NC) No Cumple:</strong> 0 puntos. | <strong>(NA) No Aplica:</strong> Excluido del cálculo.</li>
+                <li><strong>Niveles:</strong> <span class="text-red-700 font-bold">[Crítico]</span> Afecta cierres/comisión. <span class="text-yellow-700 font-bold">[Mayor]</span> Operativo clave. <span class="text-blue-700 font-bold">[Menor]</span> Administrativo.</li>
             </ul>
         </div>
 
@@ -188,80 +180,75 @@
                 return 'bg-blue-100 text-blue-800 border-blue-200 force-bg';
             }
 
-            function generateAuditTable(tasksObj) {
-                let rows = '';
+            function generateAuditCards(tasksObj) {
+                let html = '';
                 for (const [title, tasks] of Object.entries(tasksObj)) {
-                    rows += `
-                        <tr class="bg-slate-100 font-bold border-b border-gray-300 page-break-inside-avoid force-bg">
-                            <td colspan="4" class="p-2 text-sm text-slate-800">${title}</td>
-                        </tr>
+                    html += `
+                        <div class="mb-4 bg-slate-100 p-2.5 rounded font-bold text-xs md:text-sm text-slate-800 border-l-4 border-indigo-900 force-bg">
+                            ${title}
+                        </div>
                     `;
                     tasks.forEach(task => {
                         const riskClass = getRiskStyle(task.r);
-                        rows += `
-                            <tr class="hover:bg-gray-50 border-b border-gray-200 page-break-inside-avoid">
-                                <td class="p-2 text-sm w-5/12 leading-tight">
-                                    <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold border mb-1 mr-1 ${riskClass}" data-risk="${task.r}">${task.r.toUpperCase()}</span>
-                                    ${task.t}
-                                </td>
-                                <td class="p-2 text-center w-24">
-                                    <select class="form-select eval-select text-xs font-bold w-full bg-white">
-                                        <option value=""></option>
-                                        <option value="C">C</option>
-                                        <option value="NC">NC</option>
-                                        <option value="CP">CP</option>
-                                        <option value="NA">NA</option>
-                                    </select>
-                                </td>
-                                <td class="p-2 w-3/12"><textarea class="form-input text-xs w-full h-10 resize-none" placeholder="Evidencia..."></textarea></td>
-                                <td class="p-2 w-3/12"><textarea class="form-input text-xs w-full h-10 resize-none" placeholder="Observaciones..."></textarea></td>
-                            </tr>
+                        html += `
+                            <div class="mb-3 p-3 bg-white border border-gray-200 rounded-lg shadow-xs page-break-inside-avoid audit-card">
+                                <div class="mb-2">
+                                    <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold border mb-1 ${riskClass}" data-risk="${task.r}">${task.r.toUpperCase()}</span>
+                                    <p class="text-xs md:text-sm text-gray-800 font-medium leading-snug">${task.t}</p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 pt-2 border-t border-gray-100">
+                                    <div>
+                                        <label class="block text-[10px] font-bold text-gray-500 mb-0.5">Resultado:</label>
+                                        <select class="form-select eval-select text-xs font-bold w-full bg-white">
+                                            <option value=""></option>
+                                            <option value="C">C (Cumple)</option>
+                                            <option value="NC">NC (No Cumple)</option>
+                                            <option value="CP">CP (Parcial)</option>
+                                            <option value="NA">NA (No Aplica)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold text-gray-500 mb-0.5">Evidencia:</label>
+                                        <textarea class="form-input text-xs w-full h-9 resize-none" placeholder="Evidencia..."></textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold text-gray-500 mb-0.5">Observaciones:</label>
+                                        <textarea class="form-input text-xs w-full h-9 resize-none" placeholder="Observaciones..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         `;
                     });
                 }
-                return `
-                <div class="overflow-x-auto mb-2">
-                    <table class="w-full border border-gray-300 shadow-sm text-left bg-white">
-                        <thead class="bg-indigo-900 text-white force-bg">
-                            <tr>
-                                <th class="p-2 font-bold text-sm border-r border-indigo-800 text-white">REQUISITO OPERATIVO (MANUALES / TARJETAS)</th>
-                                <th class="p-2 font-bold text-sm text-center border-r border-indigo-800 text-white">RESULTADO</th>
-                                <th class="p-2 font-bold text-sm border-r border-indigo-800 text-white">EVIDENCIA AUDITADA</th>
-                                <th class="p-2 font-bold text-sm text-white">OBSERVACIONES</th>
-                            </tr>
-                        </thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
-                `;
+                return html;
             }
 
             function generateSignoff(roles) {
                 return `
                 <div class="bg-gray-50 p-4 border border-gray-300 rounded shadow-sm mb-8 page-break-inside-avoid force-bg">
-                    <h4 class="font-bold text-gray-700 mb-4 text-center border-b pb-2">DICTAMEN DEL MÓDULO</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4 px-4">
+                    <h4 class="font-bold text-gray-700 mb-4 text-center border-b pb-2 text-sm md:text-base">DICTAMEN DEL MÓDULO</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 px-2">
                         <div class="flex flex-col">
                             <span class="text-xs font-bold text-gray-600">Puntos Auditados:</span>
-                            <input type="text" class="form-input mt-1 calc-total bg-gray-100" readonly placeholder="0">
+                            <input type="text" class="form-input mt-1 calc-total bg-gray-100 text-center font-bold" readonly placeholder="0">
                         </div>
                         <div class="flex flex-col">
                             <span class="text-xs font-bold text-gray-600">Puntos Logrados:</span>
-                            <input type="text" class="form-input mt-1 calc-puntos bg-gray-100" readonly placeholder="0">
+                            <input type="text" class="form-input mt-1 calc-puntos bg-gray-100 text-center font-bold" readonly placeholder="0">
                         </div>
                         <div class="flex flex-col">
                             <span class="text-xs font-bold text-gray-600">CALIFICACIÓN DE MÓDULO (%):</span>
-                            <input type="text" class="form-input mt-1 font-bold text-lg text-center calc-porcentaje bg-white" readonly placeholder="0.0%">
+                            <input type="text" class="form-input mt-1 font-bold text-base md:text-lg text-center calc-porcentaje bg-white transition-colors" readonly placeholder="0.0%">
                         </div>
                     </div>
-                    <div class="mt-4 mb-6 p-4 rounded text-sm hidden advice-container force-bg"></div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-8">
+                    <div class="mt-4 mb-4 p-3 rounded text-xs md:text-sm hidden advice-container force-bg"></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center mt-6">
                         ${roles.map(role => `
-                            <div class="px-2">
-                                <input type="text" class="form-input mb-1 text-center" placeholder="Nombre">
-                                <input type="text" class="form-input mb-1 text-center" placeholder="Firma / Validación">
-                                <input type="date" class="form-input mb-1 text-center text-xs">
-                                <div class="font-semibold text-[10px] text-gray-600 border-t border-gray-400 pt-1 mt-1">${role}</div>
+                            <div class="px-1 border border-gray-200 p-2 rounded bg-white">
+                                <input type="text" class="form-input mb-1 text-center text-xs" placeholder="Nombre">
+                                <input type="text" class="form-input mb-1 text-center text-xs" placeholder="Firma">
+                                <input type="date" class="form-input mb-1 text-center text-[10px]">
+                                <div class="font-semibold text-[10px] text-gray-600 border-t border-gray-300 pt-1 mt-1">${role}</div>
                             </div>
                         `).join('')}
                     </div>
@@ -276,45 +263,47 @@
                 for (const [area, areaData] of Object.entries(data)) {
                     contentHTML += `
                         <div class="mb-12 audit-section" data-module-name="${area}">
-                            <h3 class="text-2xl font-bold text-indigo-900 mb-4 tracking-wide uppercase force-bg">${area}</h3>
-                            ${generateAuditTable(areaData.tasks)}
+                            <h3 class="text-lg md:text-2xl font-bold text-indigo-900 mb-4 tracking-wide uppercase force-bg border-b border-indigo-200 pb-2">${area}</h3>
+                            ${generateAuditCards(areaData.tasks)}
                             ${generateSignoff(areaData.roles)}
                         </div>
                     `;
                 }
                 
                 contentHTML += `
-                    <h2 class="text-3xl font-bold mb-6 border-b-2 border-indigo-800 pb-2 mt-8 page-break text-indigo-900 force-bg">PLAN DE ACCIÓN CORRECTIVA Y VALIDACIÓN DIGITAL</h2>
-                    <p class="mb-4 text-sm text-gray-600">Documentar hallazgos que ameriten retroalimentación o actas administrativas por fallas críticas.</p>
-                    <table class="w-full border border-gray-300 shadow-sm text-left bg-white mb-8">
-                        <thead class="bg-slate-800 text-white force-bg">
-                            <tr>
-                                <th class="p-2 font-bold text-sm w-1/4 text-white">FALLA DETECTADA</th>
-                                <th class="p-2 font-bold text-sm w-1/4 text-white">MEDIDA CORRECTIVA</th>
-                                <th class="p-2 font-bold text-sm text-white">CONSECUENCIA</th>
-                                <th class="p-2 font-bold text-sm text-white">FECHA LÍMITE</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${Array(4).fill().map(() => `
-                                <tr class="border-b border-gray-200">
-                                    <td class="p-2"><textarea class="form-input text-xs w-full h-12 resize-none"></textarea></td>
-                                    <td class="p-2"><textarea class="form-input text-xs w-full h-12 resize-none"></textarea></td>
-                                    <td class="p-2"><input type="text" class="form-input text-xs w-full" placeholder="% / Sanción"></td>
-                                    <td class="p-2"><input type="date" class="form-input text-xs w-full"></td>
+                    <h2 class="text-xl md:text-3xl font-bold mb-4 border-b-2 border-indigo-800 pb-2 mt-8 page-break text-indigo-900 force-bg">PLAN DE ACCIÓN CORRECTIVA Y VALIDACIÓN DIGITAL</h2>
+                    <p class="mb-4 text-xs md:text-sm text-gray-600">Documentar hallazgos que ameriten retroalimentación o actas administrativas por fallas críticas.</p>
+                    <div class="overflow-x-auto mb-8">
+                        <table class="w-full border border-gray-300 shadow-sm text-left bg-white text-xs">
+                            <thead class="bg-slate-800 text-white force-bg">
+                                <tr>
+                                    <th class="p-2 font-bold text-xs text-white">FALLA DETECTADA</th>
+                                    <th class="p-2 font-bold text-xs text-white">MEDIDA CORRECTIVA</th>
+                                    <th class="p-2 font-bold text-xs text-white">CONSECUENCIA</th>
+                                    <th class="p-2 font-bold text-xs text-white">FECHA LÍMITE</th>
                                 </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                ${Array(3).fill().map(() => `
+                                    <tr class="border-b border-gray-200">
+                                        <td class="p-1.5"><textarea class="form-input text-xs w-full h-10 resize-none"></textarea></td>
+                                        <td class="p-1.5"><textarea class="form-input text-xs w-full h-10 resize-none"></textarea></td>
+                                        <td class="p-1.5"><input type="text" class="form-input text-xs w-full" placeholder="% / Sanción"></td>
+                                        <td class="p-1.5"><input type="date" class="form-input text-xs w-full text-[10px]"></td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
 
-                    <div class="mt-8 p-6 bg-slate-50 border border-slate-300 rounded-lg shadow-sm page-break-inside-avoid force-bg">
+                    <div class="mt-8 p-4 md:p-6 bg-slate-50 border border-slate-300 rounded-lg shadow-sm page-break-inside-avoid force-bg">
                         <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-slate-800 text-base">VALIDACIÓN Y FIRMA DIGITAL DEL ASESOR</h4>
+                            <h4 class="font-bold text-slate-800 text-sm md:text-base">VALIDACIÓN Y FIRMA DIGITAL DEL ASESOR</h4>
                             <button type="button" onclick="limpiarFirma()" class="no-print bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold py-1 px-3 rounded transition-all">Limpiar Firma</button>
                         </div>
                         <p class="text-xs text-slate-500 mb-3">Firmar dentro del recuadro utilizando el dedo en dispositivos móviles o el ratón en computadora.</p>
                         <div class="flex justify-center bg-white border border-slate-300 rounded p-2">
-                            <canvas id="signature-canvas" width="600" height="150" class="w-full max-w-xl h-36 rounded"></canvas>
+                            <canvas id="signature-canvas" width="600" height="150" class="w-full max-w-xl h-32 rounded"></canvas>
                         </div>
                     </div>
                 `;
@@ -333,8 +322,8 @@
 
                             selects.forEach(sel => {
                                 const val = sel.value;
-                                const row = sel.closest('tr');
-                                const riskSpan = row.querySelector('span[data-risk]');
+                                const card = sel.closest('.audit-card');
+                                const riskSpan = card ? card.querySelector('span[data-risk]') : null;
                                 const riskLevel = riskSpan ? riskSpan.getAttribute('data-risk') : '';
 
                                 if (val === 'C') {
@@ -359,27 +348,31 @@
                             
                             const pctInput = section.querySelector('.calc-porcentaje');
                             const adviceContainer = section.querySelector('.advice-container');
+                            
                             if (pctInput) {
                                 pctInput.value = percentage + '%';
-                                pctInput.className = 'form-input mt-1 font-bold text-lg text-center bg-white ' + (criticalFails > 0 ? 'bg-red-100 text-red-800' : percentage >= 90 ? 'bg-green-100 text-green-800' : percentage >= 70 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800');
+                                // ¡LA CLAVE ESTÁ AQUÍ! Se mantiene "calc-porcentaje" para que nunca desaparezca.
+                                pctInput.className = 'form-input mt-1 font-bold text-base md:text-lg text-center calc-porcentaje transition-colors ' + 
+                                    (criticalFails > 0 ? 'bg-red-100 text-red-800' : 
+                                    percentage >= 90 ? 'bg-green-100 text-green-800' : 
+                                    percentage >= 70 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800');
                                 
-                                if(totalAudited > 0) {
-                                    adviceContainer.classList.remove('hidden');
+                                if (totalAudited > 0) {
                                     if (criticalFails > 0) {
-                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-red-100 text-red-900 border border-red-300 force-bg';
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-red-100 text-red-900 border border-red-300 force-bg';
                                         adviceContainer.innerHTML = "<strong>⛔ SANCIÓN OBLIGATORIA (Falla Crítica de Proceso)</strong><br><span class='mt-1 block'>Falla en proceso crítico. Se requiere intervención del Gerente según Tarjeta 18.</span>";
                                     } else if (percentage >= 90) {
-                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-green-100 text-green-900 border border-green-300 force-bg';
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-green-100 text-green-900 border border-green-300 force-bg';
                                         adviceContainer.innerHTML = "<strong>✓ DESEMPEÑO TOP (Excelencia Comercial)</strong><br><span class='mt-1 block'>Dominio perfecto de los manuales en este módulo.</span>";
                                     } else if (percentage >= 70) {
-                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-yellow-100 text-yellow-900 border border-yellow-300 force-bg';
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-yellow-100 text-yellow-900 border border-yellow-300 force-bg';
                                         adviceContainer.innerHTML = "<strong>⚠ DESEMPEÑO REGULAR (Riesgo Latente)</strong><br><span class='mt-1 block'>Cumplimiento superficial. Agendar entrevista de alineación.</span>";
                                     } else {
-                                        adviceContainer.className = 'mt-4 mb-6 p-4 rounded text-sm bg-red-100 text-red-900 border border-red-300 force-bg';
+                                        adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container bg-red-100 text-red-900 border border-red-300 force-bg';
                                         adviceContainer.innerHTML = "<strong>⛔ DESEMPEÑO DEFICIENTE (Plan de Mejora Urgente)</strong><br><span class='mt-1 block'>Indisciplina sistémica. Requiere re-entrenamiento (T18).</span>";
                                     }
                                 } else {
-                                    adviceContainer.classList.add('hidden');
+                                    adviceContainer.className = 'mt-4 mb-4 p-3 rounded text-xs md:text-sm advice-container hidden force-bg';
                                 }
                             }
 
@@ -404,7 +397,15 @@
                 document.getElementById('global-audited').value = globalTotal;
                 document.getElementById('global-points').value = globalPts;
                 document.getElementById('global-critical').value = globalCriticals;
-                document.getElementById('global-pct').value = globalPercentage + '%';
+                
+                const gPctEl = document.getElementById('global-pct');
+                gPctEl.value = globalPercentage + '%';
+                
+                // Color dinámico también para el panel global
+                gPctEl.className = 'mt-1 w-full font-bold text-2xl md:text-3xl text-center rounded py-2 border-none force-bg transition-colors ' +
+                    (globalCriticals > 0 ? 'bg-red-900 text-white' : 
+                     globalPercentage >= 90 ? 'bg-emerald-600 text-white' : 
+                     globalPercentage >= 70 ? 'bg-yellow-600 text-white' : 'bg-red-900 text-white');
             }
 
             let canvas, ctx, dibujando = false;
